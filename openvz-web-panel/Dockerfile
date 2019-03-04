@@ -10,9 +10,8 @@ RUN set -ex \
 		make \
 		wget \
 	&& gem install sqlite3 -v 1.3.13 \
-	&& cd /usr/local/lib/ruby/gems/1.8/gems/sqlite3-1.3.13/ \
-	&& ruby setup.rb \
-	&& cd / \
+	&& gem install net-ssh -v 2.9.4 \
+	&& gem install net-sftp -v 2.1.2 \
 	&& wget -O - https://raw.githubusercontent.com/sibprogrammer/owp/master/installer/ai.sh | sh \
 	&& /opt/ovz-web-panel/script/owp stop \
 	&& apt-get purge -y --auto-remove \
