@@ -1,6 +1,7 @@
 
 # @see https://github.com/docker-library/ruby/blob/master/2.3/stretch/slim/Dockerfile
 # @see https://bugs.ruby-lang.org/issues/6383#note-1
+# @see https://gist.github.com/mislav/055441129184a1512bb5
 
 FROM debian:stretch-slim
 
