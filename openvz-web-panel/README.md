@@ -1,11 +1,13 @@
 # Tag
 
-* [latest Dockerfile](https://github.com/takenooo/docker/blob/master/openvz-web-panel/Dockerfile)
+* [latest (Dockerfile)](https://github.com/takenooo/docker/blob/master/openvz-web-panel/Dockerfile)
 
 # Contents
 
 * [OpenVZ Web Panel](http://owp.softunity.com.ru/)
   * TCP port: 3000
+  * Default user name: admin
+  * Default password: admin
 
 # License
 
