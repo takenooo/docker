@@ -1,5 +1,6 @@
 FROM takenooo/ruby:1.8.7
 
+ADD entrypoint.sh /
 RUN set -ex \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends \
@@ -14,6 +15,7 @@ RUN set -ex \
 	&& gem install net-sftp -v 2.1.2 \
 	&& wget -O - https://raw.githubusercontent.com/sibprogrammer/owp/master/installer/ai.sh | sh \
 	&& /opt/ovz-web-panel/script/owp stop \
+	&& chmod +x /entrypoint.sh \
 	&& apt-get purge -y --auto-remove \
 		gcc \
 		libsqlite3-dev \
@@ -22,4 +24,4 @@ RUN set -ex \
 	&& rm -rf /var/lib/apt/lists/*
 
 EXPOSE 3000/tcp
-CMD ["bash", "-c", "/opt/ovz-web-panel/script/owp start && while true; do sleep 1; done"]
+CMD ["/entrypoint.sh"]
